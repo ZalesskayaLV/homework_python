@@ -9,16 +9,15 @@
 # - x=2; y=4-> 1
 # - x=-34; y=-30 -> 3
 
-# def input_number(message):  (DO NOT WORK! NEED TO THINK MORE)
+# def input_number(message):
 #     while True:
-#         try:
-#             number = int(message)
-#             return number
-
-
-#         except:
+#         print(message)
+#         value_input = int(input())
+#         if value_input.isdigit():
+#             return value_input
+#         else:
 #             print("error, you didn't enter a number!")
-#             break
+             
 
 
 def quarter_search(x, y):
@@ -32,6 +31,8 @@ def quarter_search(x, y):
         return 3
 
 
+# x = input_number('enter coordinate x: ')
+# y = input_number('enter coordinate y: ')
 x = int(input('enter coordinate x: '))
 y = int(input('enter coordinate y: '))
 
