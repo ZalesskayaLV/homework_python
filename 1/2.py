@@ -3,16 +3,12 @@
 #  для всех значений предикат.
 
 
-import random
-
-x = random.randint(0, 1)
-y = random.randint(0, 1)
-z= random.randint(0, 1)
-print(f'x= {x}, y= {y}, z= {z}')
-
-left_part = not(x or y or z)
-right_part = not x and not y and not z
-print (f'first_part = {left_part}    second_part = {right_part}')
+for x in range (0, 2):
+    for y in range (0, 2):
+        for z in range (0, 2):
+            left_part = not(x or y or z)
+            right_part = not x and not y and not z
+            print(f'{x, y, z}     {left_part}         {right_part}')
 
 if left_part == right_part:
     print('утверждение истинно')
