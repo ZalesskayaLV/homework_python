@@ -9,17 +9,32 @@
 # - x=2; y=4-> 1
 # - x=-34; y=-30 -> 3
 
-def input_number(message):
+# def input_number(message):
+#     while True:
+#         value_input = input(message)
+#         char = 1
+#         if value_input.startswith() == '-':
+#           char = -1
+#           if not value_input.isdigit():
+#               print("error, you didn't enter a number!")
+#           elif value_input == 0:
+#               print('null is not correct')
+#           else:
+#               return value_input*char
+
+def input_number(text):
     while True:
-        value_input = input(message)
-        if not value_input.isdigit():
+        message = input(text)
+        try:
+            number = int(message)
+            if number == 0: 
+                print('null is not correct')
+            else:
+                return number
+
+        except:
             print("error, you didn't enter a number!")
-        elif value_input == 0:
-            print('null is not correct')
-        else:
-            return value_input.isdigit()
-             
-             
+
 
 
 def quarter_search(x, y):
