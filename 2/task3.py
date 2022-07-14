@@ -23,7 +23,9 @@ def input_number(text):  # функция проверяет, что ввели 
 Num = input_number('Введите число N: ')
 
 numbers_list = {}
+summ = 0
 for i in range(1, Num+1):
     numbers_list[i] = (1+1/i)**i
-    
+    summ += numbers_list[i]
 print(numbers_list, sep=', ')
+print(summ, sep=', ')
