@@ -9,6 +9,18 @@ def random_list_number():
         num_lst.append(r)
     return num_lst
 
+# функция проверяет, что ввели число
+def input_number(text):  
+    while True:
+        message = input(text)
+        try:
+            number = int(message)
+            return number
+
+        except:
+           return False
+
+
 
 # находит сумму элементов списка, стоящих на нечетных позициях
 def summ_el_odd_idx(lst_num: list):
@@ -36,5 +48,30 @@ def mult_pairs(lst_num: list):
         new_list.append(lst_num[length//2]**2) # если список нечетной длины, то добавляется число без пары в квадрате
     return new_list
 
+# находит разницу между максимальным и минимальным значением дробной части элементов
+def fractional_diff(num_list: list):
+    nums = []
+    for item in num_list:
+        t = round(item % 1, 3)
+        nums.append(t)
+        max_num = nums[0]
+        min_num = nums[0]
+        for i in range(0, len(nums)):
+            if nums[i] < min_num:
+                min_num = nums[i]
+            else:
+                max_num = nums[i]
+        diff = round(max_num - min_num, 3)
+    return diff
 
-
+# переводит число из десятичной системы в двоичную
+def from_decimal_to_binary(number: int):
+    result: str = ""
+    lst = []
+    while number > 0:
+        remainder = number % 2
+        number = number // 2
+        lst.append(str(remainder))
+    for item in lst:
+        result+= item
+    return result
