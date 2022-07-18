@@ -68,6 +68,10 @@ def fractional_diff(num_list: list):
 def from_decimal_to_binary(number: int):
     result: str = ""
     lst = []
+    if number == 0:
+        result = 0
+    elif number < 0:
+        number *= -1
     while number > 0:
         remainder = number % 2
         number = number // 2
