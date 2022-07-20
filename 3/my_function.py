@@ -2,7 +2,7 @@
 import random
 
 # создает список из семи рандомных чисел от 1 до 9
-def random_list_number():  
+def random_list_number():
     num_lst = []
     for i in range(7):
         r = random.randint(1, 9)
@@ -10,7 +10,7 @@ def random_list_number():
     return num_lst
 
 # функция проверяет, что ввели число
-def input_number(text):  
+def input_number(text):
     while True:
         message = input(text)
         try:
@@ -18,8 +18,7 @@ def input_number(text):
             return number
 
         except:
-           return False
-
+            return False
 
 
 # находит сумму элементов списка, стоящих на нечетных позициях
@@ -45,7 +44,8 @@ def mult_pairs(lst_num: list):
         product = lst_num[i]*lst_num[length - i - 1]
         new_list.append(product)
     if length % 2 != 0:
-        new_list.append(lst_num[length//2]**2) # если список нечетной длины, то добавляется число без пары в квадрате
+        # если список нечетной длины, то добавляется число без пары в квадрате
+        new_list.append(lst_num[length//2]**2)
     return new_list
 
 # находит разницу между максимальным и минимальным значением дробной части элементов
@@ -67,7 +67,6 @@ def fractional_diff(num_list: list):
 # переводит число из десятичной системы в двоичную
 def from_decimal_to_binary(number: int):
     result: str = ""
-    lst = []
     if number == 0:
         result = 0
     elif number < 0:
@@ -75,7 +74,24 @@ def from_decimal_to_binary(number: int):
     while number > 0:
         remainder = number % 2
         number = number // 2
-        lst.append(str(remainder))
-    for item in lst:
-        result+= item
+        result = (str(remainder)) + result  
     return result
+
+
+def fibo(number: int):
+    pos_f = [0, 1]
+    neg_f = [1]
+    if number == 0:
+        pos_f = [0]
+    elif number == 1:
+        pos_f = [0, 1]
+    elif number == -1:
+        neg_f = [1]
+    elif number < 1:
+        for i in range(number, -1):
+            neg_f.append((-1**(i+1)*pos_f[-i-1]+pos_f[-i-2]))
+
+    else:
+        for i in range(2,number+1):
+            pos_f.append(pos_f[i-1]+pos_f[i-2])
+    return pos_f, neg_f.reverse()
