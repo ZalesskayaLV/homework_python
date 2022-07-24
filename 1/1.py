@@ -12,7 +12,6 @@ def input_number(text):
         try:
             number = int(message)
             return number
-        
         except:
             print("error, you didn't enter a number!")
             

@@ -1,8 +1,13 @@
-# 1 - Вычислить число c заданной точностью d. Число Пи не просто обрезать с math.pi, а вычислить, используя формулы: Нилаканта, ряды Тейлора, серию Ньютона или серию Чудновских.
+# 1 - Вычислить число c заданной точностью d. Число Пи не просто обрезать с math.pi,
+# а вычислить, используя формулы: Нилаканта, ряды Тейлора, серию Ньютона или серию Чудновских.
 
 # Пример:
 
 # - при d = 0.001, π = 3.141.    10 ^ (-10)≤ d ≤10 ^ -1
+
+from functions_4 import number_Pi
+p = number_Pi()
+print(p)
 
 # 2 - Задайте последовательность чисел. Напишите программу, которая выведет
 #  список неповторяющихся элементов исходной последовательности. 
@@ -30,3 +35,25 @@ print(lst)
 
 # https: // zen.yandex.ru/suite/a6424a0f-4fdb-44a1-95a0-9945e6f0a699
 # Это на случай возникновения непонятных символов в файле.
+
+file = open ('data.txt', 'r', encoding = 'utf-8')
+data = file.read()
+text = data.split()
+print(text)
+new_text = []
+
+for word in text:
+    if word.isalpha():
+        new_text.append(word)
+print(new_text)
+file.close()
+
+
+with open ('data.txt', 'w', encoding= 'utf-8') as text:
+    for i in new_text:
+        text.write(f'{i} ')
+#     text. write(''.join(new_text))
+text.close()
+
+
+

@@ -79,19 +79,18 @@ def from_decimal_to_binary(number: int):
 
 
 def fibo(number: int):
-    pos_f = [0, 1]
-    neg_f = [1]
+    fibo = [0, 1]
     if number == 0:
-        pos_f = [0]
+        fibo = [0]
     elif number == 1:
-        pos_f = [0, 1]
+        fibo = [0, 1]
     elif number == -1:
-        neg_f = [1]
+        fibo = [1]
     elif number < 1:
-        for i in range(number, -1):
-            neg_f.append((-1**(i+1)*pos_f[-i-1]+pos_f[-i-2]))
-
+        for i in range(number, -2):
+            fibo.append(fibo[i+2] - fibo[i+1])
+        # return fibo.reverse()
     else:
         for i in range(2,number+1):
-            pos_f.append(pos_f[i-1]+pos_f[i-2])
-    return pos_f, neg_f.reverse()
+            fibo.append(fibo[i-1]+fibo[i-2])
+    return  fibo
