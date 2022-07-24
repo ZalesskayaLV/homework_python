@@ -52,7 +52,7 @@ file.close()
 with open ('data.txt', 'w', encoding= 'utf-8') as text:
     for i in new_text:
         text.write(f'{i} ')
-#     text. write(''.join(new_text))
+
 text.close()
 
 
